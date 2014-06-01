@@ -23,9 +23,12 @@
   },
   "homepage": "https://github.com/steelmesh/steelmesh-appsync",
   "devDependencies": {
-    "nano": "^5"
+    "nano": "^5",
+    "steelmesh-publish": "~0.1",
+    "uuid": "^1"
   },
   "dependencies": {
+    "attachmate": "~0.1",
     "debug": "~0.8",
     "semver": "^2"
   }
