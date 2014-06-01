@@ -6,7 +6,7 @@ downloading any updated apps down to the local filesystem.
 
 [![NPM](https://nodei.co/npm/steelmesh-appsync.png)](https://nodei.co/npm/steelmesh-appsync/)
 
-[![unstable](https://img.shields.io/badge/stability-unstable-yellowgreen.svg)](https://github.com/badges/stability-badges) 
+[![Build Status](https://img.shields.io/travis/steelmesh/steelmesh-appsync.svg?branch=master)](https://travis-ci.org/steelmesh/steelmesh-appsync) [![unstable](https://img.shields.io/badge/stability-unstable-yellowgreen.svg)](https://github.com/badges/stability-badges) 
 
 ## Example Usage
 
