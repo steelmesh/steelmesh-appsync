@@ -13,9 +13,12 @@ module.exports = function(dbname) {
   });
 
   test('run the sync operation', function(t) {
-    t.plan(1);
+    t.plan(3);
     sync(function(err, folders) {
       t.ifError(err);
+      t.ok(Array.isArray(folders), 'got folders info');
+      t.equal(folders.length, 3, 'synced 3 folders');
     });
   });
+
 };
