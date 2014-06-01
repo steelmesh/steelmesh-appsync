@@ -1,13 +1,15 @@
 var test = require('tape');
 var nano = require('nano')('http://localhost:5984');
 var path = require('path');
+var targetPath = path.resolve(__dirname, 'target-a');
+var loadName = require('./helpers/loadname');
 var sync;
 
 module.exports = function(dbname) {
   test('create the sync function', function(t) {
     t.plan(1);
     sync = require('..')(nano.use(dbname), {
-      targetPath: path.resolve(__dirname, 'target-a')
+      targetPath: targetPath
     });
     t.equal(typeof sync, 'function', 'created sync function');
   });
@@ -21,4 +23,27 @@ module.exports = function(dbname) {
     });
   });
 
+  test('a synced', function(t) {
+    t.plan(2);
+    loadName(targetPath, 'a', function(err, name) {
+      t.ifError(err);
+      t.equal(name, 'Fred', 'got expected contents');
+    });
+  });
+
+  test('b synced', function(t) {
+    t.plan(2);
+    loadName(targetPath, 'b', function(err, name) {
+      t.ifError(err);
+      t.equal(name, 'Fred', 'got expected contents');
+    });
+  });
+
+  test('c synced', function(t) {
+    t.plan(2);
+    loadName(targetPath, 'c', function(err, name) {
+      t.ifError(err);
+      t.equal(name, 'Fred', 'got expected contents');
+    });
+  });
 };
