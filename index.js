@@ -43,7 +43,9 @@ module.exports = function(db, opts) {
           return callback(err);
         }
 
-        attachmate.download(baseUrl + '/' + app.id, appFolder, callback);
+        attachmate.download(baseUrl + '/' + app.id, appFolder, function(err) {
+          callback(err, appFolder);
+        });
       });
     });
   }
@@ -70,6 +72,7 @@ module.exports = function(db, opts) {
   function sync(app, callback) {
     var appFolder = path.resolve(targetPath, app.id);
 
+    debug('attempting to sync: ' + appFolder);
     getPackageData(appFolder, function(err, pkg) {
       if (err) {
         return callback(err);
