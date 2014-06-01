@@ -29,8 +29,10 @@
     "uuid": "^1"
   },
   "dependencies": {
+    "async": "~0.9",
     "attachmate": "~0.1",
     "debug": "~0.8",
+    "mkdirp": "~0.5",
     "semver": "^2"
   }
 }
