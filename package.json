@@ -24,6 +24,7 @@
   "homepage": "https://github.com/steelmesh/steelmesh-appsync",
   "devDependencies": {
     "nano": "^5",
+    "rimraf": "^2",
     "steelmesh-publish": "~0.1",
     "tape": "^2",
     "uuid": "^1"
