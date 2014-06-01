@@ -35,6 +35,7 @@ module.exports = function(db, opts) {
       // if we have a version and the version not greater than the local
       // version do nothing (but don't error)
       if (version && (! semver.gt(body.version, version))) {
+        debug('not downloading - newer version exists in ' + appFolder);
         return callback();
       }
 
